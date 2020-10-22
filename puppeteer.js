@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 
 const start_time = Date.now();
 // const total_allowed_time = (((5 * 60) + 30) * 60) * 1000;
-const total_allowed_time = 1978643;
+const total_allowed_time = 6000;
 
 crawlPage("https://techmeme.com", "techmeme");
 crawlPage("https://techmeme.com/river", "river");
@@ -89,7 +89,9 @@ function crawlPage(url, prefix) {
         }
 
         await page.close();
+        console.log("close page");
         await browser.close();
+        console.log("close browser");
 
     })().catch((error) => {
         console.error(error);
