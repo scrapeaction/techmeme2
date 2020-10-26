@@ -89,10 +89,15 @@ function crawlPage(url, prefix) {
         }
 
         await page.close();
+        console.log(`Time now: ${Date.now()}. Start time: ${start_time}`);
+        console.warn(`Time elapsed: ${ (Date.now() - start_time) / (1000 * 60) } minutes`); 
+        console.warn(`Time elapsed: ${ (Date.now() - start_time) / (1000 * 60 * 60) } hours`); 
         console.log("close page");
         await browser.close();
         console.log("close browser");
-
+        console.log(`Time now: ${Date.now()}. Start time: ${start_time}`);
+        console.warn(`Time elapsed: ${ (Date.now() - start_time) / (1000 * 60) } minutes`); 
+        console.warn(`Time elapsed: ${ (Date.now() - start_time) / (1000 * 60 * 60) } hours`); 
     })().catch((error) => {
         console.error(error);
     });
